@@ -1,0 +1,705 @@
+/* =========================================================
+   APPLICATIONS PAGE
+   ========================================================= */
+
+.applications-page {
+  min-height: 100vh;
+  background: #070b14;
+  color: #f8fafc;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.applications-header {
+  height: 72px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #172033;
+  background: #090e19;
+}
+
+.applications-logo {
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.applications-logo span {
+  color: #3b82f6;
+}
+
+.back-dashboard {
+  padding: 10px 16px;
+  border: 1px solid #263244;
+  border-radius: 8px;
+  background: #0d1422;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.back-dashboard:hover {
+  color: white;
+  border-color: #3b82f6;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.applications-container {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 60px 0 100px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.applications-title {
+  text-align: center;
+}
+
+.applications-title > span {
+  color: #60a5fa;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.applications-title h1 {
+  margin: 12px 0 0;
+  font-size: 38px;
+}
+
+.applications-title p {
+  margin: 10px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* =========================================================
+   APPLICATION LIST
+   ========================================================= */
+
+.applications-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* =========================================================
+   APPLICATION CARD
+   ========================================================= */
+
+.application-card {
+  width: 100%;
+  padding: 28px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  flex-wrap: wrap;
+
+  border: 1px solid #263752;
+  border-radius: 16px;
+
+  background: #0b111e;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   COMPANY ICON
+   ========================================================= */
+
+.application-company-icon {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   APPLICATION INFORMATION
+   ========================================================= */
+
+.application-info {
+  flex: 1 1 300px;
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.application-info h2 {
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-size: 22px;
+  line-height: 1.3;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.application-info h3 {
+  margin: 8px 0 0;
+
+  color: #60a5fa;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.application-info p {
+  margin: 12px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   APPLICATION STATUS
+   ========================================================= */
+
+.application-status-section {
+  width: 180px;
+  flex: 0 0 180px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  padding-top: 4px;
+  box-sizing: border-box;
+}
+
+.application-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 150px;
+  min-height: 48px;
+  padding: 10px 18px;
+
+  box-sizing: border-box;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.application-label {
+  color: #475569;
+  font-size: 10px;
+  text-align: center;
+}
+
+/* Status colors */
+
+.application-status.applied {
+  background: rgba(59, 130, 246, 0.12);
+  color: #93c5fd;
+}
+
+.application-status.under-review {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fcd34d;
+}
+
+.application-status.shortlisted {
+  background: rgba(168, 85, 247, 0.12);
+  color: #c4b5fd;
+}
+
+.application-status.interview {
+  background: rgba(6, 182, 212, 0.12);
+  color: #67e8f9;
+}
+
+.application-status.selected {
+  background: rgba(34, 197, 94, 0.12);
+  color: #86efac;
+}
+
+.application-status.rejected {
+  background: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+}
+
+/* =========================================================
+   INTERVIEW SECTION
+   ========================================================= */
+
+.application-interview {
+  flex: 0 0 100%;
+  width: 100%;
+
+  margin-top: 4px;
+  padding: 28px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #263752;
+  border-radius: 14px;
+
+  background: #0a1220;
+}
+
+/* =========================================================
+   INTERVIEW HEADER
+   ========================================================= */
+
+.interview-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid #1e293b;
+}
+
+.interview-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(59, 130, 246, 0.12);
+
+  font-size: 25px;
+}
+
+.interview-heading h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.interview-heading p {
+  margin: 6px 0 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* =========================================================
+   INTERVIEW DETAILS
+   ========================================================= */
+
+.interview-details {
+  margin-top: 25px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.interview-details > div {
+  min-height: 82px;
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+
+  background: #080f1b;
+}
+
+.interview-details strong {
+  margin-bottom: 8px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.interview-details span {
+  color: #f8fafc;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   INTERVIEW NOTES
+   ========================================================= */
+
+.interview-notes {
+  margin-top: 18px;
+  padding: 20px;
+
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+
+  background: #080f1b;
+}
+
+.interview-notes strong {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #f8fafc;
+  font-size: 13px;
+}
+
+.interview-notes p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   INTERVIEW LOCATION
+   ========================================================= */
+
+.interview-location {
+  margin-top: 18px;
+  padding: 18px;
+
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+
+  background: #080f1b;
+}
+
+.interview-location strong {
+  color: #f8fafc;
+  font-size: 13px;
+}
+
+.interview-location p {
+  margin: 8px 0 0;
+
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* =========================================================
+   JOIN INTERVIEW
+   ========================================================= */
+
+.join-interview-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 22px;
+  padding: 13px 22px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: linear-gradient(
+    135deg,
+    #4f46e5,
+    #6366f1
+  );
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.join-interview-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 25px rgba(79, 70, 229, 0.25);
+}
+
+/* =========================================================
+   COMPLETED INTERVIEW
+   ========================================================= */
+
+.interview-completed {
+  margin-top: 25px;
+  padding: 24px;
+
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 12px;
+
+  background: rgba(34, 197, 94, 0.04);
+
+  text-align: center;
+}
+
+.interview-completed h3 {
+  margin: 0;
+
+  color: #86efac;
+
+  font-size: 18px;
+}
+
+.interview-rating {
+  margin-top: 12px;
+
+  color: #f8fafc;
+
+  font-size: 14px;
+}
+
+.interview-feedback {
+  margin-top: 15px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   CANCELLED
+   ========================================================= */
+
+.interview-cancelled {
+  border-color: rgba(239, 68, 68, 0.25);
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.interview-cancelled .interview-heading h3 {
+  color: #fca5a5;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-applications {
+  margin-top: 40px;
+  padding: 70px 25px;
+
+  text-align: center;
+
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+
+  background: #0b111e;
+}
+
+.empty-icon {
+  font-size: 35px;
+}
+
+.empty-applications h2 {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.empty-applications p {
+  max-width: 450px;
+  margin: 10px auto 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.find-jobs-button {
+  margin-top: 25px;
+  padding: 13px 22px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5
+  );
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.applications-loading {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #64748b;
+}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.applications-message {
+  margin-top: 30px;
+  padding: 14px;
+
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 8px;
+
+  background: rgba(239, 68, 68, 0.05);
+
+  color: #fca5a5;
+
+  text-align: center;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .application-card {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .application-company-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .application-info {
+    min-width: 0;
+  }
+
+  .application-status-section {
+    grid-column: 2;
+    width: 100%;
+
+    align-items: flex-start;
+  }
+
+  .application-interview {
+    grid-column: 1 / -1;
+  }
+
+  .interview-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .applications-container {
+    width: calc(100% - 30px);
+    padding: 40px 0 70px;
+  }
+
+  .applications-title h1 {
+    font-size: 30px;
+  }
+
+  .application-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+
+    padding: 20px;
+  }
+
+  .application-company-icon {
+    align-self: flex-start;
+  }
+
+  .application-info {
+    width: 100%;
+    flex: none;
+  }
+
+  .application-info h2 {
+    font-size: 22px;
+  }
+
+  .application-status-section {
+    width: 100%;
+    flex: none;
+
+    align-items: flex-start;
+  }
+
+  .application-status {
+    width: auto;
+    min-width: 130px;
+  }
+
+  .application-interview {
+    width: 100%;
+    flex: none;
+
+    margin-top: 4px;
+    padding: 20px;
+  }
+
+  .interview-details {
+    grid-template-columns: 1fr;
+  }
+
+  .interview-heading {
+    align-items: flex-start;
+  }
+}

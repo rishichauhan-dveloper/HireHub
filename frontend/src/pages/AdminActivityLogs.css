@@ -1,0 +1,952 @@
+/* =========================================================
+   HIREHUB ADMIN ACTIVITY LOGS
+   MATCHED TO ADMIN DASHBOARD LAYOUT
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.admin-activity-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+
+  background: #070b14;
+  color: #f5f7ff;
+
+  font-family: Arial, sans-serif;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   Same size as Admin Dashboard
+   ========================================================= */
+
+.admin-activity-sidebar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 374px;
+  height: 100vh;
+
+  padding: 28px 22px 18px;
+
+  background: #0a0f1d;
+
+  border-right: 1px solid #1d2940;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  z-index: 100;
+}
+
+
+/* Sidebar scrollbar */
+
+.admin-activity-sidebar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.admin-activity-sidebar::-webkit-scrollbar-track {
+  background: #0a0f1d;
+}
+
+.admin-activity-sidebar::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.admin-activity-logo {
+  width: fit-content;
+
+  margin: 0 auto 38px;
+
+  font-size: 38px;
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+
+  white-space: nowrap;
+
+  color: #f5f7ff;
+}
+
+.admin-activity-logo span {
+  color: #258cff;
+}
+
+
+/* =========================================================
+   ADMIN PROFILE
+   ========================================================= */
+
+.admin-activity-profile {
+  width: 100%;
+
+  min-height: 116px;
+
+  padding: 18px 20px;
+
+  margin-bottom: 34px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  background: #101827;
+
+  border: 1px solid #26344d;
+
+  border-radius: 17px;
+}
+
+.admin-activity-avatar {
+  width: 58px;
+  height: 58px;
+
+  flex: 0 0 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #285be8,
+    #6338e8
+  );
+
+  color: #ffffff;
+
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.admin-activity-profile strong {
+  display: block;
+
+  color: #f5f7ff;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.admin-activity-profile small {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #8aa0c4;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.admin-activity-nav {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.admin-activity-nav button {
+  width: 100%;
+
+  min-height: 52px;
+
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+
+  border: 0;
+
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: #91a4c5;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  text-align: left;
+
+  transition: background 0.18s ease,
+              color 0.18s ease;
+}
+
+.admin-activity-nav button:hover {
+  background: #101b34;
+  color: #dbeafe;
+}
+
+
+/* Active navigation */
+
+.admin-activity-nav button.active {
+  background: #10203d;
+  color: #4da3ff;
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.admin-activity-logout {
+  width: 100%;
+
+  min-height: 52px;
+
+  margin-top: auto;
+
+  padding: 0 20px;
+
+  border: 1px solid rgba(248, 113, 113, 0.18);
+
+  border-radius: 12px;
+
+  background: rgba(248, 113, 113, 0.035);
+
+  color: #fca5a5;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  text-align: left;
+}
+
+.admin-activity-logout:hover {
+  background: rgba(248, 113, 113, 0.08);
+}
+
+
+/* =========================================================
+   MAIN
+   Same starting point as Dashboard
+   ========================================================= */
+
+.admin-activity-main {
+  width: calc(100% - 374px);
+
+  min-height: 100vh;
+
+  margin-left: 374px;
+
+  padding: 40px 44px 60px;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.admin-activity-header {
+  width: 100%;
+
+  max-width: 1180px;
+
+  margin: 0 auto 38px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 30px;
+}
+
+.admin-activity-header > div:first-child {
+  flex: 1;
+
+  text-align: center;
+}
+
+.admin-activity-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 25px;
+
+  border-radius: 999px;
+
+  color: #59c8ff;
+
+  background: rgba(14, 165, 233, 0.08);
+
+  border: 1px solid rgba(56, 189, 248, 0.30);
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.admin-activity-header h1 {
+  margin: 18px 0 8px;
+
+  color: #f8fafc;
+
+  font-size: 58px;
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+}
+
+.admin-activity-header p {
+  margin: 0;
+
+  color: #7293c4;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   DASHBOARD BUTTON
+   ========================================================= */
+
+.admin-activity-back {
+  flex-shrink: 0;
+
+  padding: 15px 24px;
+
+  border: 1px solid #26344d;
+
+  border-radius: 14px;
+
+  background: #101721;
+
+  color: #dbe4f2;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 17px;
+
+  font-weight: 600;
+}
+
+.admin-activity-back:hover {
+  background: #172033;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.admin-activity-message {
+  width: 100%;
+
+  max-width: 1180px;
+
+  margin: 0 auto 20px;
+
+  padding: 14px 17px;
+
+  border-radius: 11px;
+
+  color: #bae6fd;
+
+  background: rgba(14, 165, 233, 0.08);
+
+  border: 1px solid rgba(56, 189, 248, 0.14);
+}
+
+
+/* =========================================================
+   ACTIVITY CARD
+   ========================================================= */
+
+.admin-activity-card {
+  width: 100%;
+
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #0b1120;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.admin-activity-card-header {
+  min-height: 126px;
+
+  padding: 26px 30px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.10);
+}
+
+.admin-activity-card-header h2 {
+  margin: 0 0 7px;
+
+  color: #f1f5f9;
+
+  font-size: 21px;
+
+  font-weight: 700;
+}
+
+.admin-activity-card-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   REFRESH
+   ========================================================= */
+
+.admin-activity-refresh {
+  flex-shrink: 0;
+
+  padding: 12px 18px;
+
+  border: 1px solid rgba(148, 163, 184, 0.16);
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  color: #cbd5e1;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.admin-activity-refresh:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================================
+   ACTIVITY LIST
+   ========================================================= */
+
+.admin-activity-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-activity-item {
+  width: 100%;
+
+  min-height: 160px;
+
+  padding: 30px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 20px;
+
+  border-top: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.admin-activity-item:first-child {
+  border-top: 0;
+}
+
+.admin-activity-item:hover {
+  background: rgba(255, 255, 255, 0.018);
+}
+
+
+/* =========================================================
+   ACTIVITY ICON
+   ========================================================= */
+
+.admin-activity-icon {
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(14, 165, 233, 0.10);
+
+  border: 1px solid rgba(56, 189, 248, 0.16);
+
+  color: #7dd3fc;
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   ACTIVITY CONTENT
+   ========================================================= */
+
+.admin-activity-content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.admin-activity-content strong {
+  display: block;
+
+  color: #f1f5f9;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+.admin-activity-content p {
+  margin: 8px 0 12px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+.admin-activity-content small {
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.admin-activity-empty {
+  padding: 80px 25px;
+
+  text-align: center;
+}
+
+.admin-activity-empty-icon {
+  width: 54px;
+  height: 54px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #86efac;
+
+  background: rgba(34, 197, 94, 0.10);
+
+  border: 1px solid rgba(34, 197, 94, 0.16);
+
+  font-size: 20px;
+
+  font-weight: 800;
+}
+
+.admin-activity-empty h3 {
+  margin: 0 0 7px;
+
+  color: #e2e8f0;
+
+  font-size: 18px;
+}
+
+.admin-activity-empty p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .admin-activity-sidebar {
+    width: 300px;
+  }
+
+  .admin-activity-main {
+    width: calc(100% - 300px);
+
+    margin-left: 300px;
+
+    padding: 35px 30px 50px;
+  }
+
+  .admin-activity-header h1 {
+    font-size: 46px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .admin-activity-page {
+    display: block;
+  }
+
+  .admin-activity-sidebar {
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: auto;
+
+    padding: 22px 16px;
+
+    border-right: 0;
+
+    border-bottom: 1px solid #1d2940;
+
+    overflow: visible;
+  }
+
+  .admin-activity-main {
+    width: 100%;
+
+    margin-left: 0;
+
+    padding: 28px 16px 40px;
+  }
+
+  .admin-activity-header {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .admin-activity-header h1 {
+    font-size: 34px;
+  }
+
+  .admin-activity-card-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .admin-activity-refresh {
+    width: 100%;
+  }
+
+  .admin-activity-item {
+    padding: 22px;
+  }
+}
+/* =========================================================
+   FINAL DASHBOARD SIZE FIX
+   Activity Logs must match Admin Dashboard
+   ========================================================= */
+
+.admin-activity-page {
+  width: 100% !important;
+  min-width: 0 !important;
+  display: flex !important;
+}
+
+
+/* EXACT DASHBOARD SIDEBAR WIDTH */
+.admin-activity-sidebar {
+  position: fixed !important;
+
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+
+  width: 374px !important;
+  min-width: 374px !important;
+  max-width: 374px !important;
+
+  flex: 0 0 374px !important;
+
+  padding: 28px 22px 18px !important;
+
+  overflow-x: hidden !important;
+}
+
+
+/* MAIN MUST START EXACTLY AFTER 374px */
+.admin-activity-main {
+  width: calc(100% - 374px) !important;
+
+  min-width: 0 !important;
+
+  margin-left: 374px !important;
+
+  padding: 40px 44px 60px !important;
+
+  overflow-x: hidden !important;
+}
+
+
+/* KEEP PROFILE INSIDE THE 374px SIDEBAR */
+.admin-activity-profile {
+  width: 100% !important;
+  max-width: 330px !important;
+}
+
+
+/* LOGO SIZE LIKE DASHBOARD */
+.admin-activity-logo {
+  font-size: 38px !important;
+  margin-bottom: 38px !important;
+}
+
+
+/* NAVIGATION SAME WIDTH AS SIDEBAR CONTENT */
+.admin-activity-nav {
+  width: 100% !important;
+  max-width: 330px !important;
+}
+
+.admin-activity-nav button {
+  width: 100% !important;
+}
+
+
+/* LOGOUT SAME WIDTH */
+.admin-activity-logout {
+  width: 100% !important;
+  max-width: 330px !important;
+}
+
+
+/* ACTIVITY CONTENT */
+.admin-activity-header,
+.admin-activity-card {
+  width: 100% !important;
+  max-width: 1180px !important;
+}
+/* =========================================================
+   ACTIVITY LOGS - MATCH DASHBOARD SIDEBAR EXACTLY
+   ========================================================= */
+
+.admin-activity-page {
+  display: flex !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+
+/* SIDEBAR */
+.admin-activity-sidebar {
+  position: fixed !important;
+
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+
+  /* reduced because current Activity page is rendering wider */
+  width: 280px !important;
+  min-width: 280px !important;
+  max-width: 280px !important;
+
+  flex: 0 0 280px !important;
+
+  padding: 28px 16px 18px !important;
+
+  margin: 0 !important;
+
+  box-sizing: border-box !important;
+
+  background: #0a0f1d !important;
+
+  border-right: 1px solid #1d2940 !important;
+
+  overflow-x: hidden !important;
+}
+
+
+/* LOGO */
+.admin-activity-logo {
+  margin: 0 auto 32px !important;
+
+  font-size: 36px !important;
+
+  line-height: 1 !important;
+
+  white-space: nowrap !important;
+}
+
+
+/* PROFILE */
+.admin-activity-profile {
+  width: 100% !important;
+
+  max-width: none !important;
+
+  min-height: 110px !important;
+
+  margin-bottom: 30px !important;
+
+  padding: 16px !important;
+}
+
+
+/* NAVIGATION */
+.admin-activity-nav {
+  width: 100% !important;
+
+  max-width: none !important;
+
+  gap: 3px !important;
+}
+
+.admin-activity-nav button {
+  width: 100% !important;
+
+  min-height: 50px !important;
+
+  padding: 0 14px !important;
+
+  font-size: 16px !important;
+}
+
+
+/* LOGOUT */
+.admin-activity-logout {
+  width: 100% !important;
+
+  max-width: none !important;
+
+  min-height: 50px !important;
+
+  padding: 0 14px !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.admin-activity-main {
+  width: calc(100% - 280px) !important;
+
+  min-width: 0 !important;
+
+  margin-left: 280px !important;
+
+  padding: 40px 44px 60px !important;
+
+  box-sizing: border-box !important;
+
+  overflow-x: hidden !important;
+}
+
+
+/* HEADER */
+.admin-activity-header {
+  width: 100% !important;
+
+  max-width: 1180px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* ACTIVITY CARD */
+.admin-activity-card {
+  width: 100% !important;
+
+  max-width: 1180px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

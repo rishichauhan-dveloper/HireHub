@@ -1,0 +1,408 @@
+.candidate-matches-page {
+  min-height: 100vh;
+  display: flex;
+  background: #070b15;
+  color: #f4f7ff;
+}
+
+
+/* SIDEBAR */
+
+.candidate-matches-sidebar {
+  width: 280px;
+  min-height: 100vh;
+  padding: 28px 20px;
+  border-right: 1px solid #17233a;
+  background: #080d19;
+  display: flex;
+  flex-direction: column;
+}
+
+.candidate-matches-logo {
+  font-size: 34px;
+  font-weight: 800;
+  padding: 0 18px 30px;
+}
+
+.candidate-matches-logo span {
+  color: #3b82f6;
+}
+
+.candidate-matches-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid #1d2a42;
+  border-radius: 16px;
+  background: #0c1322;
+}
+
+.candidate-matches-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.candidate-matches-user strong {
+  display: block;
+}
+
+.candidate-matches-user small {
+  display: block;
+  margin-top: 5px;
+  color: #7184a7;
+}
+
+.candidate-matches-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.candidate-matches-nav button {
+  border: none;
+  background: transparent;
+  color: #7890b8;
+  padding: 14px 18px;
+  border-radius: 12px;
+  text-align: left;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.candidate-matches-nav button:hover,
+.candidate-matches-nav button.active {
+  background: #0d1b37;
+  color: #4da3ff;
+}
+
+.candidate-matches-logout {
+  margin-top: auto;
+  border: none;
+  background: transparent;
+  color: #91a4c5;
+  padding: 15px 18px;
+  text-align: left;
+  cursor: pointer;
+}
+
+
+/* MAIN */
+
+.candidate-matches-main {
+  flex: 1;
+  padding: 42px 55px 80px;
+  max-width: 1500px;
+}
+
+.candidate-matches-header {
+  max-width: 1000px;
+  margin-bottom: 35px;
+}
+
+.matches-back-button {
+  border: 1px solid #263957;
+  background: #0d1524;
+  color: #dbe7ff;
+  padding: 11px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 35px;
+}
+
+.matches-label {
+  color: #4c9aff;
+  font-weight: 800;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.candidate-matches-header h1 {
+  font-size: 52px;
+  margin: 10px 0;
+}
+
+.candidate-matches-header > p:last-child {
+  color: #8295b8;
+  font-size: 18px;
+}
+
+
+/* SKILLS */
+
+.candidate-skills-panel {
+  padding: 25px;
+  border: 1px solid #1d2a42;
+  background: #0b1322;
+  border-radius: 18px;
+  margin-bottom: 35px;
+}
+
+.candidate-skills-panel h2 {
+  margin: 0 0 6px;
+}
+
+.candidate-skills-panel p {
+  color: #7185a8;
+}
+
+.candidate-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.candidate-skills span {
+  background: #122044;
+  border: 1px solid #284a87;
+  color: #69a9ff;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.candidate-skills .no-skills {
+  color: #8796b2;
+}
+
+
+/* MESSAGE */
+
+.matches-message {
+  padding: 18px 22px;
+  border: 1px solid #29426b;
+  border-radius: 14px;
+  background: #0b1424;
+  margin-bottom: 25px;
+}
+
+
+/* EMPTY */
+
+.matches-empty {
+  padding: 80px 30px;
+  text-align: center;
+  border: 1px solid #1c2b43;
+  border-radius: 20px;
+  background: #0b1321;
+}
+
+.matches-empty h2 {
+  font-size: 27px;
+}
+
+.matches-empty p {
+  color: #7184a5;
+}
+
+.matches-empty button {
+  margin-top: 18px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+/* MATCH SECTION */
+
+.matches-section-heading {
+  margin-bottom: 20px;
+}
+
+.matches-section-heading p {
+  color: #4c9aff;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.matches-section-heading h2 {
+  margin-top: 5px;
+  font-size: 28px;
+}
+
+
+/* GRID */
+
+.matches-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(360px, 1fr));
+  gap: 22px;
+}
+
+
+/* CARD */
+
+.match-card {
+  border: 1px solid #1e2e48;
+  background: #0b1321;
+  border-radius: 18px;
+  padding: 25px;
+  transition: 0.2s ease;
+}
+
+.match-card:hover {
+  transform: translateY(-3px);
+  border-color: #31588e;
+}
+
+.match-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.match-card-header h3 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.match-card-header p {
+  margin-top: 8px;
+  color: #8093b5;
+}
+
+.match-percentage {
+  color: #61e294;
+  font-size: 24px;
+  font-weight: 800;
+  text-align: right;
+}
+
+.match-percentage small {
+  display: block;
+  color: #7387a8;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+
+/* PROGRESS */
+
+.match-progress {
+  height: 7px;
+  background: #172238;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.match-progress-value {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #7c3aed
+  );
+}
+
+
+/* DETAILS */
+
+.match-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #8da0c1;
+  font-size: 13px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #18263c;
+}
+
+
+/* SKILLS */
+
+.matched-skills,
+.missing-skills {
+  margin-top: 20px;
+}
+
+.matched-skills h4,
+.missing-skills h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.matched-skills > div,
+.missing-skills > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.matched-skills span,
+.missing-skills span {
+  font-size: 12px;
+  padding: 6px 9px;
+  border-radius: 15px;
+}
+
+.matched-skills .matched {
+  color: #63e49a;
+  background: #0d2921;
+  border: 1px solid #18543f;
+}
+
+.missing-skills span {
+  color: #e6a1a1;
+  background: #2a171b;
+  border: 1px solid #5b2b31;
+}
+
+
+/* BUTTON */
+
+.view-match-button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 13px;
+  border: 1px solid #315890;
+  background: #10203a;
+  color: #66a9ff;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.view-match-button:hover {
+  background: #17335c;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+  .candidate-matches-sidebar {
+    display: none;
+  }
+
+  .candidate-matches-main {
+    padding: 30px 20px;
+  }
+
+  .candidate-matches-header h1 {
+    font-size: 38px;
+  }
+
+  .matches-grid {
+    grid-template-columns: 1fr;
+  }
+}

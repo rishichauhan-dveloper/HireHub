@@ -1,0 +1,178 @@
+.employer-details-page {
+  min-height: 100vh;
+  display: flex;
+  background: #080d18;
+  color: #f5f7ff;
+}
+
+.employer-details-main {
+  flex: 1;
+  padding: 50px 70px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-button {
+  padding: 12px 20px;
+  border: 1px solid #263b62;
+  border-radius: 12px;
+  background: transparent;
+  color: #6da1ff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+.back-button:hover {
+  background: #101d38;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.details-header h1 {
+  font-size: 42px;
+  margin: 8px 0;
+}
+
+.details-header p {
+  color: #82a4d8;
+  font-size: 18px;
+}
+
+.application-status {
+  padding: 14px 25px;
+  border-radius: 30px;
+  background: #103b4c;
+  color: #66eaff;
+  font-weight: 700;
+}
+
+.details-card {
+  background: #0b1424;
+  border: 1px solid #203452;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 25px;
+}
+
+.details-card h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 25px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.details-grid label {
+  display: block;
+  color: #718fbe;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.details-grid p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.cover-letter {
+  background: #080f1c;
+  border: 1px solid #203452;
+  border-radius: 14px;
+  padding: 25px;
+  line-height: 1.7;
+  color: #b5c8e8;
+  white-space: pre-wrap;
+}
+
+.details-message {
+  padding: 30px;
+  background: #0b1424;
+  border: 1px solid #203452;
+  border-radius: 18px;
+  color: #8fb0df;
+}
+
+@media (max-width: 800px) {
+  .employer-details-main {
+    padding: 30px 20px;
+  }
+
+  .details-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Application Status Control */
+
+.application-status-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.application-status-control label {
+  color: #8fb4e8;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.application-status-control select {
+  padding: 10px 38px 10px 14px;
+  border: 1px solid #29446d;
+  border-radius: 8px;
+  background: #0b1425;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+.application-status-control select:hover {
+  border-color: #4d8dff;
+}
+
+.application-status-control select:focus {
+  border-color: #4d8dff;
+  box-shadow: 0 0 0 2px rgba(77, 141, 255, 0.2);
+}
+
+.application-status-control select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.application-status-control small {
+  color: #66eaff;
+  font-size: 13px;
+}
+.schedule-interview-button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3366ff, #6338e8);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.schedule-interview-button:hover {
+  opacity: 0.9;
+}

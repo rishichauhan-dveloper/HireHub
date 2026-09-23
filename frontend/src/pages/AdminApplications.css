@@ -1,0 +1,514 @@
+/* =========================================================
+   ADMIN APPLICATIONS PAGE
+   ========================================================= */
+
+.admin-applications-page {
+  min-height: 100vh;
+  display: flex;
+  background: #070b14;
+  color: #f8fafc;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.admin-applications-sidebar {
+  width: 270px;
+  min-height: 100vh;
+  padding: 32px 22px;
+  background: #090f1d;
+  border-right: 1px solid #1d2b45;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-applications-logo {
+  font-size: 34px;
+  font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 35px;
+}
+
+.admin-applications-logo span {
+  color: #3b82f6;
+}
+
+.admin-applications-label {
+  color: #4da3ff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin-bottom: 22px;
+}
+
+.admin-applications-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid #243452;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  background: #0c1424;
+}
+
+.admin-applications-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.admin-applications-user strong {
+  display: block;
+  font-size: 15px;
+  color: #f8fafc;
+}
+
+.admin-applications-user small {
+  display: block;
+  margin-top: 5px;
+  color: #7890b5;
+}
+
+.admin-applications-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-applications-nav button {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  color: #91a8d0;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.admin-applications-nav button:hover {
+  background: #0e1b32;
+  color: #4da3ff;
+}
+
+.admin-applications-nav button.active {
+  background: #102142;
+  border-color: #1e3d70;
+  color: #4da3ff;
+}
+
+.admin-applications-logout {
+  margin-top: auto;
+  padding: 13px 18px;
+  border: 1px solid #38283c;
+  border-radius: 10px;
+  background: #0d1422;
+  color: #e5e7eb;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-applications-logout:hover {
+  border-color: #8b5cf6;
+  background: #171327;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.admin-applications-main {
+  flex: 1;
+  padding: 55px 65px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.admin-applications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 45px;
+}
+
+.admin-applications-tag {
+  color: #4da3ff;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+.admin-applications-header h1 {
+  margin: 18px 0 8px;
+  font-size: 52px;
+  line-height: 1;
+  color: #f8fafc;
+}
+
+.admin-applications-header p {
+  margin: 0;
+  color: #8da7d1;
+  font-size: 18px;
+}
+
+.admin-applications-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-applications-back {
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 1px solid #243452;
+  background: #0d1628;
+  color: #f8fafc;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.admin-applications-back:hover {
+  background: #14233d;
+  border-color: #3b82f6;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.admin-applications-message {
+  padding: 16px 20px;
+  margin-bottom: 25px;
+  border: 1px solid #6b2630;
+  border-radius: 12px;
+  background: #241117;
+  color: #fca5a5;
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.admin-applications-section {
+  max-width: 1200px;
+}
+
+.admin-applications-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
+.admin-applications-section-heading span {
+  color: #4da3ff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.admin-applications-section-heading h2 {
+  margin: 8px 0 0;
+  font-size: 28px;
+  color: #f8fafc;
+}
+
+.admin-applications-section-heading > strong {
+  color: #8fa8d0;
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   APPLICATION LIST
+   ========================================================= */
+
+.admin-applications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-application-card {
+  padding: 25px;
+  border: 1px solid #1f3558;
+  border-radius: 16px;
+  background: #0b1424;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  transition: 0.2s ease;
+}
+
+.admin-application-card:hover {
+  border-color: #315b91;
+  transform: translateY(-1px);
+}
+
+.admin-application-main {
+  display: flex;
+  gap: 18px;
+  min-width: 0;
+}
+
+.admin-application-avatar {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  background: #172b4d;
+  color: #60a5fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.admin-application-info {
+  min-width: 0;
+}
+
+.admin-application-info h3 {
+  margin: 0 0 5px;
+  color: #f8fafc;
+  font-size: 21px;
+}
+
+.admin-application-info > p {
+  margin: 0 0 15px;
+  color: #7892bc;
+}
+
+.admin-application-job {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.admin-application-job strong {
+  color: #60a5fa;
+  font-size: 16px;
+}
+
+.admin-application-job span {
+  color: #c0cce0;
+  font-size: 14px;
+}
+
+.admin-application-info > small {
+  color: #7186a8;
+}
+
+.admin-cover-letter {
+  margin-top: 15px;
+  padding: 14px;
+  border-left: 2px solid #315b91;
+  background: #09111f;
+}
+
+.admin-cover-letter strong {
+  color: #b8c9e3;
+}
+
+.admin-cover-letter p {
+  margin: 7px 0 0;
+  color: #8fa8ca;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   ACTIONS / STATUS
+   ========================================================= */
+
+.admin-application-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 12px;
+  min-width: 175px;
+}
+
+.admin-application-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 1px solid #315b91;
+  background: #102142;
+  color: #60a5fa;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-application-status-select {
+  width: 175px;
+  padding: 10px 12px;
+  border: 1px solid #263d61;
+  border-radius: 9px;
+  background: #0d1728;
+  color: #f8fafc;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.admin-application-status-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+
+/* =========================================================
+   STATUS COLORS
+   ========================================================= */
+
+.admin-application-status.applied {
+  color: #60a5fa;
+}
+
+.admin-application-status.under-review {
+  color: #fbbf24;
+}
+
+.admin-application-status.shortlisted {
+  color: #a78bfa;
+}
+
+.admin-application-status.interview {
+  color: #38bdf8;
+}
+
+.admin-application-status.selected {
+  color: #4ade80;
+}
+
+.admin-application-status.rejected {
+  color: #f87171;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING
+   ========================================================= */
+
+.admin-applications-empty,
+.admin-applications-loading {
+  padding: 60px 30px;
+  text-align: center;
+  border: 1px solid #1f3558;
+  border-radius: 16px;
+  background: #0b1424;
+}
+
+.admin-applications-empty h3,
+.admin-applications-loading h2 {
+  color: #f8fafc;
+  margin-top: 0;
+}
+
+.admin-applications-empty p,
+.admin-applications-loading p {
+  color: #7892bc;
+}
+
+.admin-applications-spinner {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 20px;
+  border: 3px solid #243452;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: adminApplicationsSpin 0.8s linear infinite;
+}
+
+@keyframes adminApplicationsSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .admin-applications-sidebar {
+    width: 220px;
+  }
+
+  .admin-applications-main {
+    padding: 40px 30px;
+  }
+
+  .admin-applications-header h1 {
+    font-size: 42px;
+  }
+
+  .admin-application-card {
+    flex-direction: column;
+  }
+
+  .admin-application-actions {
+    align-items: flex-start;
+    min-width: 0;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .admin-applications-page {
+    display: block;
+  }
+
+  .admin-applications-sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .admin-applications-main {
+    padding: 30px 18px;
+  }
+
+  .admin-applications-header {
+    flex-direction: column;
+  }
+
+  .admin-applications-header h1 {
+    font-size: 36px;
+  }
+
+  .admin-applications-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}

@@ -1,0 +1,428 @@
+.employer-matching-page {
+  min-height: 100vh;
+  display: flex;
+  background: #070b15;
+  color: #f4f7ff;
+}
+
+
+/* SIDEBAR */
+
+.employer-matching-sidebar {
+  width: 280px;
+  min-height: 100vh;
+  padding: 28px 20px;
+  border-right: 1px solid #17233a;
+  background: #080d19;
+  display: flex;
+  flex-direction: column;
+}
+
+.employer-matching-logo {
+  font-size: 34px;
+  font-weight: 800;
+  padding: 0 18px 30px;
+}
+
+.employer-matching-logo span {
+  color: #3b82f6;
+}
+
+.employer-matching-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid #1d2a42;
+  border-radius: 16px;
+  background: #0c1322;
+}
+
+.employer-matching-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.employer-matching-user strong {
+  display: block;
+}
+
+.employer-matching-user small {
+  display: block;
+  margin-top: 5px;
+  color: #7184a7;
+}
+
+.employer-matching-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.employer-matching-nav button {
+  border: none;
+  background: transparent;
+  color: #7890b8;
+  padding: 14px 18px;
+  border-radius: 12px;
+  text-align: left;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.employer-matching-nav button:hover,
+.employer-matching-nav button.active {
+  background: #0d1b37;
+  color: #4da3ff;
+}
+
+.employer-matching-logout {
+  margin-top: auto;
+  border: none;
+  background: transparent;
+  color: #91a4c5;
+  padding: 15px 18px;
+  text-align: left;
+  cursor: pointer;
+}
+
+
+/* MAIN */
+
+.employer-matching-main {
+  flex: 1;
+  padding: 42px 55px 80px;
+  max-width: 1500px;
+}
+
+.employer-matching-header {
+  max-width: 1000px;
+  margin-bottom: 35px;
+}
+
+.matching-back-button {
+  border: 1px solid #263957;
+  background: #0d1524;
+  color: #dbe7ff;
+  padding: 11px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 35px;
+}
+
+.matching-back-button:hover {
+  background: #14233b;
+}
+
+.matching-label {
+  color: #4c9aff;
+  font-weight: 800;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.employer-matching-header h1 {
+  font-size: 52px;
+  margin: 10px 0;
+}
+
+.employer-matching-header > p:last-child {
+  color: #8295b8;
+  font-size: 18px;
+}
+
+
+/* MESSAGE */
+
+.matching-message {
+  padding: 18px 22px;
+  border: 1px solid #29426b;
+  border-radius: 14px;
+  background: #0b1424;
+  margin-bottom: 25px;
+}
+
+
+/* JOB PANEL */
+
+.employer-job-matching-panel {
+  padding: 28px;
+  border: 1px solid #1d2a42;
+  background: #0b1322;
+  border-radius: 18px;
+  margin-bottom: 35px;
+}
+
+.job-matching-label {
+  color: #4c9aff;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.employer-job-matching-panel h2 {
+  margin: 8px 0;
+  font-size: 30px;
+}
+
+.employer-job-matching-panel p {
+  color: #7185a8;
+}
+
+.required-skills {
+  margin-top: 25px;
+  padding-top: 22px;
+  border-top: 1px solid #18263c;
+}
+
+.required-skills h3 {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.required-skills > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.required-skills span {
+  background: #122044;
+  border: 1px solid #284a87;
+  color: #69a9ff;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.required-skills .no-skills {
+  color: #8796b2;
+}
+
+
+/* RESULTS */
+
+.candidate-results-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.candidate-results-heading p {
+  color: #4c9aff;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.candidate-results-heading h2 {
+  margin: 6px 0 0;
+  font-size: 28px;
+}
+
+.candidate-results-heading > span {
+  color: #7184a5;
+  font-size: 13px;
+}
+
+
+/* GRID */
+
+.candidate-matching-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(380px, 1fr));
+  gap: 22px;
+}
+
+
+/* CARD */
+
+.employer-candidate-card {
+  border: 1px solid #1e2e48;
+  background: #0b1321;
+  border-radius: 18px;
+  padding: 25px;
+  transition: 0.2s ease;
+}
+
+.employer-candidate-card:hover {
+  transform: translateY(-3px);
+  border-color: #31588e;
+}
+
+
+/* HEADER */
+
+.candidate-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.candidate-card-header h3 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.candidate-card-header p {
+  margin-top: 8px;
+  color: #8093b5;
+  word-break: break-word;
+}
+
+.candidate-match-percentage {
+  text-align: right;
+}
+
+.candidate-match-percentage strong {
+  display: block;
+  color: #61e294;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.candidate-match-percentage small {
+  display: block;
+  margin-top: 2px;
+  color: #7387a8;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+
+/* PROGRESS */
+
+.candidate-match-progress {
+  height: 7px;
+  background: #172238;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.candidate-match-progress div {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #7c3aed
+  );
+}
+
+
+/* SKILLS */
+
+.candidate-skills-section,
+.candidate-matched-skills,
+.candidate-missing-skills {
+  margin-top: 20px;
+}
+
+.candidate-skills-section h4,
+.candidate-matched-skills h4,
+.candidate-missing-skills h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.candidate-skills-section > div,
+.candidate-matched-skills > div,
+.candidate-missing-skills > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.candidate-skills-section span,
+.candidate-matched-skills span,
+.candidate-missing-skills span {
+  font-size: 12px;
+  padding: 6px 9px;
+  border-radius: 15px;
+}
+
+.candidate-skills-section span {
+  color: #69a9ff;
+  background: #122044;
+  border: 1px solid #284a87;
+}
+
+.candidate-matched-skills .matched {
+  color: #63e49a;
+  background: #0d2921;
+  border: 1px solid #18543f;
+}
+
+.candidate-missing-skills span {
+  color: #e6a1a1;
+  background: #2a171b;
+  border: 1px solid #5b2b31;
+}
+
+.no-candidate-skills,
+.no-matched-skills {
+  color: #8796b2 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+
+/* EMPTY */
+
+.matching-empty {
+  padding: 80px 30px;
+  text-align: center;
+  border: 1px solid #1c2b43;
+  border-radius: 20px;
+  background: #0b1321;
+}
+
+.matching-empty h2 {
+  font-size: 27px;
+}
+
+.matching-empty p {
+  color: #7184a5;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+  .employer-matching-sidebar {
+    display: none;
+  }
+
+  .employer-matching-main {
+    padding: 30px 20px;
+  }
+
+  .employer-matching-header h1 {
+    font-size: 38px;
+  }
+
+  .candidate-matching-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .candidate-results-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
