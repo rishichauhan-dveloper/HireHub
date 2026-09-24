@@ -4,7 +4,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use MongoDB\Client;
 
-$client = new Client("mongodb://localhost:27017");
+$client = new Client(getenv("MONGODB_URI") ?: "mongodb://localhost:27017");
 
 $db = $client->selectDatabase("hirehub");
 

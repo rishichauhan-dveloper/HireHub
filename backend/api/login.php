@@ -16,7 +16,7 @@ use MongoDB\Client;
 try {
 
     // Connect to MongoDB
-    $client = new Client("mongodb://localhost:27017");
+    $client = new Client(getenv("MONGODB_URI") ?: "mongodb://localhost:27017");
 
     // Select database and collection
     $database = $client->selectDatabase("hirehub");
