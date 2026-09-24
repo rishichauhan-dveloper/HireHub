@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use MongoDB\Client;
+use MongoDB\BSON\UTCDateTime;
 
 try {
 
@@ -21,8 +22,9 @@ try {
     // Select HireHub database
     $database = $client->selectDatabase("hirehub");
 
-    // Select users collection
+    // Select collections
     $users = $database->selectCollection("users");
+    $candidates = $database->selectCollection("candidates");
 
     // Get JSON data from request
     $data = json_decode(file_get_contents("php://input"), true);
@@ -90,16 +92,47 @@ try {
         "role" => $role,
         "phone" => $phone,
         "status" => "active",
-        "created_at" => new MongoDB\BSON\UTCDateTime()
+        "created_at" => new UTCDateTime()
     ];
 
-    // Insert into MongoDB
+    // Insert user into MongoDB
     $result = $users->insertOne($newUser);
+
+    $userId = $result->getInsertedId();
+
+    // Automatically create candidate profile
+    if ($role === "candidate") {
+
+        $candidateProfile = [
+            "user_id" => $userId,
+            "full_name" => $name,
+            "email" => $email,
+            "phone" => $phone,
+            "date_of_birth" => "",
+            "gender" => "",
+
+            "address" => [
+                "city" => "",
+                "state" => "",
+                "country" => ""
+            ],
+
+            "education" => [],
+            "skills" => [],
+            "experience" => [],
+            "resume" => null,
+
+            "created_at" => new UTCDateTime(),
+            "updated_at" => new UTCDateTime()
+        ];
+
+        $candidates->insertOne($candidateProfile);
+    }
 
     echo json_encode([
         "success" => true,
         "message" => "Registration successful.",
-        "user_id" => (string) $result->getInsertedId()
+        "user_id" => (string) $userId
     ]);
 
 } catch (Exception $e) {
