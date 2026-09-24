@@ -7,6 +7,8 @@ function EmployerDashboard() {
 
   const [user, setUser] = useState(null);
   const [jobs, setJobs] = useState([]);
+  const [applications, setApplications] = useState([]);
+
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
 
@@ -27,36 +29,84 @@ function EmployerDashboard() {
       }
 
       setUser(loggedInUser);
-      fetchJobs(loggedInUser.id);
+
+      // Fetch jobs and applications
+      fetchDashboardData(loggedInUser.id);
+
     } catch (error) {
       console.error("User data error:", error);
       navigate("/login");
     }
   }, [navigate]);
 
-  const fetchJobs = async (employerId) => {
+  const fetchDashboardData = async (employerId) => {
     try {
       setLoading(true);
       setMessage("");
 
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/jobs.php?employer_id=${employerId}`
+      // Fetch jobs and applications together
+      const [jobsResponse, applicationsResponse] =
+        await Promise.all([
+          fetch(
+            `${import.meta.env.VITE_API_URL}/api/jobs.php?employer_id=${employerId}`
+          ),
+
+          fetch(
+            `${import.meta.env.VITE_API_URL}/api/applications.php?employer_id=${employerId}`
+          )
+        ]);
+
+      if (!jobsResponse.ok) {
+        throw new Error(
+          `Jobs API error: ${jobsResponse.status}`
+        );
+      }
+
+      if (!applicationsResponse.ok) {
+        throw new Error(
+          `Applications API error: ${applicationsResponse.status}`
+        );
+      }
+
+      const jobsData = await jobsResponse.json();
+      const applicationsData = await applicationsResponse.json();
+
+      console.log("Employer jobs response:", jobsData);
+      console.log(
+        "Employer applications response:",
+        applicationsData
       );
 
-      if (!response.ok) {
-        throw new Error(`HTTP error: ${response.status}`);
-      }
-
-      const data = await response.json();
-
-      if (data.success) {
-        setJobs(data.jobs || []);
+      // Jobs
+      if (jobsData.success) {
+        setJobs(jobsData.jobs || []);
       } else {
-        setMessage(data.message || "Unable to load jobs.");
+        setMessage(
+          jobsData.message || "Unable to load jobs."
+        );
       }
+
+      // Applications
+      if (applicationsData.success) {
+        setApplications(
+          applicationsData.applications || []
+        );
+      } else {
+        setMessage(
+          applicationsData.message ||
+            "Unable to load applications."
+        );
+      }
+
     } catch (error) {
-      console.error("Employer jobs error:", error);
-      setMessage("Unable to connect to HireHub server.");
+      console.error(
+        "Employer dashboard error:",
+        error
+      );
+
+      setMessage(
+        "Unable to connect to HireHub server."
+      );
     } finally {
       setLoading(false);
     }
@@ -67,9 +117,21 @@ function EmployerDashboard() {
     navigate("/login");
   };
 
+  // Active jobs
   const activeJobs = jobs.filter(
-    (job) => String(job.status).toLowerCase() === "active"
+    (job) =>
+      String(job.status || "")
+        .toLowerCase() === "active"
   );
+
+  // Shortlisted applications
+  const shortlistedApplications =
+    applications.filter(
+      (application) =>
+        String(application.status || "")
+          .toLowerCase()
+          .trim() === "shortlisted"
+    );
 
   return (
     <div className="employer-dashboard">
@@ -103,25 +165,36 @@ function EmployerDashboard() {
 
           <button
             className="active"
-            onClick={() => navigate("/employer/dashboard")}
+            onClick={() =>
+              navigate("/employer/dashboard")
+            }
           >
             Dashboard
           </button>
 
           <button
-            onClick={() => navigate("/employer/jobs")}
+            onClick={() =>
+              navigate("/employer/jobs")
+            }
           >
             My Jobs
           </button>
 
           <button
-            onClick={() => navigate("/employer/applications")}
+            onClick={() =>
+              navigate("/employer/applications")
+            }
           >
             Applications
           </button>
-          <button onClick={() => navigate("/employer/interviews")}>
-  Interviews
-</button>
+
+          <button
+            onClick={() =>
+              navigate("/employer/interviews")
+            }
+          >
+            Interviews
+          </button>
 
         </nav>
 
@@ -159,7 +232,9 @@ function EmployerDashboard() {
 
           <button
             className="create-job-button"
-            onClick={() => navigate("/employer/jobs/create")}
+            onClick={() =>
+              navigate("/employer/jobs/create")
+            }
           >
             + Post a Job
           </button>
@@ -170,49 +245,73 @@ function EmployerDashboard() {
         {/* STATS */}
         <section className="employer-stats">
 
+          {/* TOTAL JOBS */}
           <div className="employer-stat-card">
 
             <span>💼</span>
 
             <div>
-              <strong>{jobs.length}</strong>
-              <small>Total Jobs</small>
+              <strong>
+                {jobs.length}
+              </strong>
+
+              <small>
+                Total Jobs
+              </small>
             </div>
 
           </div>
 
 
+          {/* ACTIVE JOBS */}
           <div className="employer-stat-card">
 
             <span>🟢</span>
 
             <div>
-              <strong>{activeJobs.length}</strong>
-              <small>Active Jobs</small>
+              <strong>
+                {activeJobs.length}
+              </strong>
+
+              <small>
+                Active Jobs
+              </small>
             </div>
 
           </div>
 
 
+          {/* APPLICATIONS */}
           <div className="employer-stat-card">
 
             <span>👥</span>
 
             <div>
-              <strong>0</strong>
-              <small>Applications</small>
+              <strong>
+                {applications.length}
+              </strong>
+
+              <small>
+                Applications
+              </small>
             </div>
 
           </div>
 
 
+          {/* SHORTLISTED */}
           <div className="employer-stat-card">
 
             <span>⭐</span>
 
             <div>
-              <strong>0</strong>
-              <small>Shortlisted</small>
+              <strong>
+                {shortlistedApplications.length}
+              </strong>
+
+              <small>
+                Shortlisted
+              </small>
             </div>
 
           </div>
@@ -239,7 +338,9 @@ function EmployerDashboard() {
 
             <button
               className="view-all-btn"
-              onClick={() => navigate("/employer/jobs")}
+              onClick={() =>
+                navigate("/employer/jobs")
+              }
             >
               View All →
             </button>
@@ -264,85 +365,97 @@ function EmployerDashboard() {
 
 
           {/* NO JOBS */}
-          {!loading && !message && jobs.length === 0 && (
-            <div className="employer-empty">
+          {!loading &&
+            !message &&
+            jobs.length === 0 && (
 
-              <h3>
-                No jobs posted yet
-              </h3>
+              <div className="employer-empty">
 
-              <p>
-                Create your first job posting to start finding candidates.
-              </p>
+                <h3>
+                  No jobs posted yet
+                </h3>
 
-              <button
-                onClick={() => navigate("/employer/jobs/create")}
-              >
-                + Post Your First Job
-              </button>
+                <p>
+                  Create your first job posting to start
+                  finding candidates.
+                </p>
 
-            </div>
-          )}
+                <button
+                  onClick={() =>
+                    navigate("/employer/jobs/create")
+                  }
+                >
+                  + Post Your First Job
+                </button>
+
+              </div>
+            )}
 
 
           {/* JOB LIST */}
-          {!loading && !message && jobs.length > 0 && (
+          {!loading &&
+            !message &&
+            jobs.length > 0 && (
 
-            <div className="employer-job-list">
+              <div className="employer-job-list">
 
-              {jobs.slice(0, 5).map((job) => (
+                {jobs.slice(0, 5).map((job) => (
 
-                <article
-                  className="employer-job-card"
-                  key={job._id}
-                >
+                  <article
+                    className="employer-job-card"
+                    key={job._id}
+                  >
 
-                  <div className="employer-job-info">
+                    <div className="employer-job-info">
 
-                    <h3>
-                      {job.title}
-                    </h3>
+                      <h3>
+                        {job.title}
+                      </h3>
 
-                    <p className="employer-company">
-                      {job.company_name}
-                    </p>
+                      <p className="employer-company">
+                        {job.company_name}
+                      </p>
 
-                    <p className="employer-location">
-                      📍 {job.location || "Location not specified"}
-                    </p>
+                      <p className="employer-location">
+                        📍{" "}
+                        {job.location ||
+                          "Location not specified"}
+                      </p>
 
-                  </div>
+                    </div>
 
 
-                  <div className="employer-job-meta">
+                    <div className="employer-job-meta">
 
-                    <span
-                      className={`job-status ${
-                        String(job.status || "")
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")
-                      }`}
-                    >
-                      {job.status || "Unknown"}
-                    </span>
+                      <span
+                        className={`job-status ${
+                          String(job.status || "")
+                            .toLowerCase()
+                            .replace(/\s+/g, "-")
+                        }`}
+                      >
+                        {job.status || "Unknown"}
+                      </span>
 
-                    <button
-                      onClick={() =>
-                        navigate(`/employer/jobs/${job._id}/edit`)
-                      }
-                    >
-                      Edit
-                    </button>
+                      <button
+                        onClick={() =>
+                          navigate(
+                            `/employer/jobs/${job._id}/edit`
+                          )
+                        }
+                      >
+                        Edit
+                      </button>
 
-                  </div>
+                    </div>
 
-                </article>
+                  </article>
 
-              ))}
+                ))}
 
-            </div>
+              </div>
 
-          )}
+            )}
 
         </section>
 
