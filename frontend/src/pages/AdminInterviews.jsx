@@ -47,7 +47,7 @@ function AdminInterviews() {
       const [interviewsResponse, applicationsResponse] =
         await Promise.all([
           fetch(
-            "${import.meta.env.VITE_API_URL}/api/interviews.php"
+            `${import.meta.env.VITE_API_URL}/api/interviews.php`
           ),
           fetch(
             `${import.meta.env.VITE_API_URL}/api/applications.php?admin_id=${adminId}`
@@ -108,7 +108,7 @@ function AdminInterviews() {
 
     try {
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/interviews.php",
+        `${import.meta.env.VITE_API_URL}/api/interviews.php`,
         {
           method: "DELETE",
           headers: {

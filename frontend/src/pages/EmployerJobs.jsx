@@ -73,7 +73,7 @@ function EmployerJobs() {
 
     try {
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/jobs.php",
+        `${import.meta.env.VITE_API_URL}/api/jobs.php`,
         {
           method: "DELETE",
           headers: {

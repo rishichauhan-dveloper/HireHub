@@ -149,7 +149,7 @@ const handleResumeFileUpload = async () => {
     formData.append("resume", resumeFile);
 
     const response = await fetch(
-      "${import.meta.env.VITE_API_URL}/api/resume-upload.php",
+      `${import.meta.env.VITE_API_URL}/api/resume-upload.php`,
       {
         method: "POST",
         body: formData,
@@ -213,7 +213,7 @@ const handleResumeFileUpload = async () => {
     try {
 
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/resume-upload.php",
+        `${import.meta.env.VITE_API_URL}/api/resume-upload.php`,
         {
           method: "DELETE",
           headers: {
@@ -276,7 +276,7 @@ const handleSubmit = async (event) => {
       };
 
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/candidate-resume.php",
+        `${import.meta.env.VITE_API_URL}/api/candidate-resume.php`,
         {
           method: "POST",
 

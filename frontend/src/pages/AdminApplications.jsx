@@ -106,7 +106,7 @@ function AdminApplications() {
   const updateStatus = async (applicationId, status) => {
     try {
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/applications.php",
+        `${import.meta.env.VITE_API_URL}/api/applications.php`,
         {
           method: "PUT",
           headers: {

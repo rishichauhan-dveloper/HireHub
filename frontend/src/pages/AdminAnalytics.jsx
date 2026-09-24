@@ -52,7 +52,7 @@ function AdminAnalytics() {
 
         try {
           await fetch(
-            "${import.meta.env.VITE_API_URL}/api/admin.php",
+            `${import.meta.env.VITE_API_URL}/api/admin.php`,
             {
               method: "POST",
               headers: {

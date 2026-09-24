@@ -279,7 +279,7 @@ const fetchNotifications = async (loggedInUser) => {
   onClick={async () => {
     try {
       await fetch(
-        "${import.meta.env.VITE_API_URL}/api/notifications.php",
+        `${import.meta.env.VITE_API_URL}/api/notifications.php`,
         {
           method: "POST",
           headers: {

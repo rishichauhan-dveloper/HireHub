@@ -16,7 +16,7 @@ function FindJobs() {
     try {
 
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/jobs.php"
+        `${import.meta.env.VITE_API_URL}/api/jobs.php`
       );
 
       const data = await response.json();

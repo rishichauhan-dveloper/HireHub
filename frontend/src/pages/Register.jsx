@@ -50,7 +50,7 @@ const Register = () => {
 
     try {
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/register.php",
+        `${import.meta.env.VITE_API_URL}/api/register.php`,
         {
           method: "POST",
           headers: {

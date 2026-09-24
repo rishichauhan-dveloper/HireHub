@@ -57,7 +57,7 @@ function AdminUsers() {
 
         try {
           await fetch(
-            "${import.meta.env.VITE_API_URL}/api/admin.php",
+            `${import.meta.env.VITE_API_URL}/api/admin.php`,
             {
               method: "POST",
               headers: {
@@ -134,7 +134,7 @@ function AdminUsers() {
       setMessage("");
 
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/admin.php",
+        `${import.meta.env.VITE_API_URL}/api/admin.php`,
         {
           method: "POST",
           headers: {

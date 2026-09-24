@@ -137,7 +137,7 @@ function EmployerInterviews() {
       setMessage("");
 
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/interviews.php",
+        `${import.meta.env.VITE_API_URL}/api/interviews.php`,
         {
           method: "DELETE",
           headers: {
@@ -204,7 +204,7 @@ function EmployerInterviews() {
       setMessage("");
 
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/interviews.php",
+        `${import.meta.env.VITE_API_URL}/api/interviews.php`,
         {
           method: "PUT",
           headers: {

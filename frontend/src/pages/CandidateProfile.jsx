@@ -114,7 +114,7 @@ function CandidateProfile() {
       };
 
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/candidate-profile.php",
+        `${import.meta.env.VITE_API_URL}/api/candidate-profile.php`,
         {
           method: "PUT",
           headers: {

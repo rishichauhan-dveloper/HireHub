@@ -203,7 +203,7 @@ function EmployerScheduleInterview() {
       setMessage("");
 
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/interviews.php",
+        `${import.meta.env.VITE_API_URL}/api/interviews.php`,
         {
           method: "POST",
           headers: {
@@ -292,7 +292,7 @@ function EmployerScheduleInterview() {
       setMessage("");
 
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/interviews.php",
+        `${import.meta.env.VITE_API_URL}/api/interviews.php`,
         {
           method: "PUT",
           headers: {
@@ -381,7 +381,7 @@ function EmployerScheduleInterview() {
       setMessage("");
 
       const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/interviews.php",
+        `${import.meta.env.VITE_API_URL}/api/interviews.php`,
         {
           method: "DELETE",
           headers: {
