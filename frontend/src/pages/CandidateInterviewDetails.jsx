@@ -48,7 +48,7 @@ function CandidateInterviewDetails() {
       setMessage("");
 
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/interviews.php?candidate_id=${candidateId}&application_id=${applicationId}`
+        `${import.meta.env.VITE_API_URL}/api/interviews.php?candidate_id=${candidateId}&application_id=${applicationId}`
       );
 
       const data = await response.json();

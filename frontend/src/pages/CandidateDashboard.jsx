@@ -44,7 +44,7 @@ const [showNotifications, setShowNotifications] = useState(false);
     setLoadingApplications(true);
 
     const response = await fetch(
-      `http://localhost/HireHub/backend/api/applications.php?candidate_id=${loggedInUser.id}`
+      `${import.meta.env.VITE_API_URL}/api/applications.php?candidate_id=${loggedInUser.id}`
     );
 
     const data = await response.json();
@@ -79,7 +79,7 @@ const [showNotifications, setShowNotifications] = useState(false);
 const fetchNotifications = async (loggedInUser) => {
   try {
     const response = await fetch(
-      `http://localhost/HireHub/backend/api/notifications.php?user_id=${loggedInUser.id}`
+      `${import.meta.env.VITE_API_URL}/api/notifications.php?user_id=${loggedInUser.id}`
     );
 
     const data = await response.json();
@@ -279,7 +279,7 @@ const fetchNotifications = async (loggedInUser) => {
   onClick={async () => {
     try {
       await fetch(
-        "http://localhost/HireHub/backend/api/notifications.php",
+        "${import.meta.env.VITE_API_URL}/api/notifications.php",
         {
           method: "POST",
           headers: {

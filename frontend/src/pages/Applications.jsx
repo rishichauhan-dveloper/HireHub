@@ -28,10 +28,10 @@ function Applications() {
       const [applicationsResponse, interviewsResponse] =
         await Promise.all([
           fetch(
-            `http://localhost/HireHub/backend/api/applications.php?candidate_id=${user.id}`
+            `${import.meta.env.VITE_API_URL}/api/applications.php?candidate_id=${user.id}`
           ),
           fetch(
-            `http://localhost/HireHub/backend/api/interviews.php?candidate_id=${user.id}`
+            `${import.meta.env.VITE_API_URL}/api/interviews.php?candidate_id=${user.id}`
           ),
         ]);
 

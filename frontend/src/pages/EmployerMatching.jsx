@@ -42,7 +42,7 @@ function EmployerMatching() {
       setMessage("");
 
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/candidate-matching.php?job_id=${jobId}`
+        `${import.meta.env.VITE_API_URL}/api/candidate-matching.php?job_id=${jobId}`
       );
 
       const data = await response.json();

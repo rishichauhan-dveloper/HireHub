@@ -41,7 +41,7 @@ function EmployerApplicationDetails() {
       setLoading(true);
 
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/applications.php?employer_id=${employerId}`
+        `${import.meta.env.VITE_API_URL}/api/applications.php?employer_id=${employerId}`
       );
 
       const data = await response.json();
@@ -78,7 +78,7 @@ function EmployerApplicationDetails() {
       setMessage("");
 
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/applications.php",
+        "${import.meta.env.VITE_API_URL}/api/applications.php",
         {
           method: "PUT",
           headers: {

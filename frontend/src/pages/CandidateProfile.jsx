@@ -49,7 +49,7 @@ function CandidateProfile() {
   const fetchProfile = async (userId) => {
     try {
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/candidate-profile.php?user_id=${userId}`
+        `${import.meta.env.VITE_API_URL}/api/candidate-profile.php?user_id=${userId}`
       );
 
       const data = await response.json();
@@ -114,7 +114,7 @@ function CandidateProfile() {
       };
 
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/candidate-profile.php",
+        "${import.meta.env.VITE_API_URL}/api/candidate-profile.php",
         {
           method: "PUT",
           headers: {

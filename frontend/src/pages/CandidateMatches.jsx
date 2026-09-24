@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CandidateMatches.css";
 
@@ -57,7 +57,7 @@ function CandidateMatches() {
       setMessage("");
 
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/candidate-job-matching.php?candidate_id=${candidateId}`
+        `${import.meta.env.VITE_API_URL}/api/candidate-job-matching.php?candidate_id=${candidateId}`
       );
 
       const data = await response.json();

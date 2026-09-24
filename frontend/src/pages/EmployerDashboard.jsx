@@ -40,7 +40,7 @@ function EmployerDashboard() {
       setMessage("");
 
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/jobs.php?employer_id=${employerId}`
+        `${import.meta.env.VITE_API_URL}/api/jobs.php?employer_id=${employerId}`
       );
 
       if (!response.ok) {

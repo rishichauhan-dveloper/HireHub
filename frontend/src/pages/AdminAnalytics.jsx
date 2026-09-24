@@ -40,7 +40,7 @@ function AdminAnalytics() {
       setMessage("");
 
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/admin.php?admin_id=${loggedInUser.id}`
+        `${import.meta.env.VITE_API_URL}/api/admin.php?admin_id=${loggedInUser.id}`
       );
 
       const data = await response.json();
@@ -52,7 +52,7 @@ function AdminAnalytics() {
 
         try {
           await fetch(
-            "http://localhost/HireHub/backend/api/admin.php",
+            "${import.meta.env.VITE_API_URL}/api/admin.php",
             {
               method: "POST",
               headers: {

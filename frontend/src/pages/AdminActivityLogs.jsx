@@ -53,7 +53,7 @@ function AdminActivityLogs() {
       setMessage("");
 
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/admin.php?admin_id=${adminId}&action=activity`
+        `${import.meta.env.VITE_API_URL}/api/admin.php?admin_id=${adminId}&action=activity`
       );
 
       const data = await response.json();

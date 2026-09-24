@@ -40,7 +40,7 @@ function EmployerJobs() {
       setMessage("");
 
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/jobs.php?employer_id=${employerId}`
+        `${import.meta.env.VITE_API_URL}/api/jobs.php?employer_id=${employerId}`
       );
 
       if (!response.ok) {
@@ -73,7 +73,7 @@ function EmployerJobs() {
 
     try {
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/jobs.php",
+        "${import.meta.env.VITE_API_URL}/api/jobs.php",
         {
           method: "DELETE",
           headers: {

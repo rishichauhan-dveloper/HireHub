@@ -47,10 +47,10 @@ function AdminInterviews() {
       const [interviewsResponse, applicationsResponse] =
         await Promise.all([
           fetch(
-            "http://localhost/HireHub/backend/api/interviews.php"
+            "${import.meta.env.VITE_API_URL}/api/interviews.php"
           ),
           fetch(
-            `http://localhost/HireHub/backend/api/applications.php?admin_id=${adminId}`
+            `${import.meta.env.VITE_API_URL}/api/applications.php?admin_id=${adminId}`
           ),
         ]);
 
@@ -108,7 +108,7 @@ function AdminInterviews() {
 
     try {
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/interviews.php",
+        "${import.meta.env.VITE_API_URL}/api/interviews.php",
         {
           method: "DELETE",
           headers: {

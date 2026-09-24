@@ -1,4 +1,4 @@
-﻿import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./AdminReports.css";
 
@@ -80,7 +80,7 @@ function AdminReports() {
 
     try {
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/admin.php?action=dashboard&admin_id=${encodeURIComponent(adminId)}`
+        `${import.meta.env.VITE_API_URL}/api/admin.php?action=dashboard&admin_id=${encodeURIComponent(adminId)}`
       );
 
       const data = await response.json();

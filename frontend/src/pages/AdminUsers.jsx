@@ -45,7 +45,7 @@ function AdminUsers() {
       setMessage("");
 
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/admin.php?admin_id=${adminId}&action=users`
+        `${import.meta.env.VITE_API_URL}/api/admin.php?admin_id=${adminId}&action=users`
       );
 
       const data = await response.json();
@@ -57,7 +57,7 @@ function AdminUsers() {
 
         try {
           await fetch(
-            "http://localhost/HireHub/backend/api/admin.php",
+            "${import.meta.env.VITE_API_URL}/api/admin.php",
             {
               method: "POST",
               headers: {
@@ -134,7 +134,7 @@ function AdminUsers() {
       setMessage("");
 
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/admin.php",
+        "${import.meta.env.VITE_API_URL}/api/admin.php",
         {
           method: "POST",
           headers: {

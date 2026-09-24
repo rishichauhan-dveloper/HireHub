@@ -16,7 +16,7 @@ function FindJobs() {
     try {
 
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/jobs.php"
+        "${import.meta.env.VITE_API_URL}/api/jobs.php"
       );
 
       const data = await response.json();

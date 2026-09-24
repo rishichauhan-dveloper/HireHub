@@ -50,7 +50,7 @@ const Register = () => {
 
     try {
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/register.php",
+        "${import.meta.env.VITE_API_URL}/api/register.php",
         {
           method: "POST",
           headers: {

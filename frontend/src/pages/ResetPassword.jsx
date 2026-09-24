@@ -35,7 +35,7 @@ function ResetPassword() {
 
     try {
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/reset-password.php",
+        "${import.meta.env.VITE_API_URL}/api/reset-password.php",
         {
           method: "POST",
           headers: {

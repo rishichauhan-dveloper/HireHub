@@ -46,7 +46,7 @@ function AdminApplications() {
        * candidate_id and employer_id filters only.
        */
       const response = await fetch(
-  `http://localhost/HireHub/backend/api/applications.php?admin_id=${adminId}`
+  `${import.meta.env.VITE_API_URL}/api/applications.php?admin_id=${adminId}`
 );
 
       const data = await response.json();
@@ -106,7 +106,7 @@ function AdminApplications() {
   const updateStatus = async (applicationId, status) => {
     try {
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/applications.php",
+        "${import.meta.env.VITE_API_URL}/api/applications.php",
         {
           method: "PUT",
           headers: {

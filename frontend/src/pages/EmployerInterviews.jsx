@@ -53,10 +53,10 @@ function EmployerInterviews() {
         applicationsResponse,
       ] = await Promise.all([
         fetch(
-          `http://localhost/HireHub/backend/api/interviews.php?employer_id=${employerId}`
+          `${import.meta.env.VITE_API_URL}/api/interviews.php?employer_id=${employerId}`
         ),
         fetch(
-          `http://localhost/HireHub/backend/api/applications.php?employer_id=${employerId}`
+          `${import.meta.env.VITE_API_URL}/api/applications.php?employer_id=${employerId}`
         ),
       ]);
 
@@ -137,7 +137,7 @@ function EmployerInterviews() {
       setMessage("");
 
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/interviews.php",
+        "${import.meta.env.VITE_API_URL}/api/interviews.php",
         {
           method: "DELETE",
           headers: {
@@ -204,7 +204,7 @@ function EmployerInterviews() {
       setMessage("");
 
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/interviews.php",
+        "${import.meta.env.VITE_API_URL}/api/interviews.php",
         {
           method: "PUT",
           headers: {

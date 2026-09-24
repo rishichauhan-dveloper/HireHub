@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AdminDashboard.css";
 
@@ -48,7 +48,7 @@ function AdminDashboard() {
       setMessage("");
 
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/admin.php?admin_id=${adminId}`
+        `${import.meta.env.VITE_API_URL}/api/admin.php?admin_id=${adminId}`
       );
 
       const data = await response.json();

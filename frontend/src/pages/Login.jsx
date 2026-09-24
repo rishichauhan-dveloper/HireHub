@@ -14,7 +14,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/login.php",
+        "${import.meta.env.VITE_API_URL}/api/login.php",
         {
           method: "POST",
           headers: {

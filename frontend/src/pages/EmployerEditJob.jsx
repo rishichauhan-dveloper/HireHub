@@ -51,7 +51,7 @@ function EmployerEditJob() {
   const fetchJob = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/jobs.php?id=${id}`
+        `${import.meta.env.VITE_API_URL}/api/jobs.php?id=${id}`
       );
 
       const data = await response.json();
@@ -125,7 +125,7 @@ function EmployerEditJob() {
       };
 
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/jobs.php",
+        "${import.meta.env.VITE_API_URL}/api/jobs.php",
         {
           method: "PUT",
           headers: {

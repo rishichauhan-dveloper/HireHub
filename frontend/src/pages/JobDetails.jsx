@@ -26,7 +26,7 @@ function JobDetails() {
   const fetchJob = async () => {
     try {
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/jobs.php?id=${jobId}`
+        `${import.meta.env.VITE_API_URL}/api/jobs.php?id=${jobId}`
       );
 
       const data = await response.json();
@@ -56,7 +56,7 @@ function JobDetails() {
       const user = JSON.parse(savedUser);
 
       const response = await fetch(
-        `http://localhost/HireHub/backend/api/applications.php?candidate_id=${user.id}`
+        `${import.meta.env.VITE_API_URL}/api/applications.php?candidate_id=${user.id}`
       );
 
       const data = await response.json();
@@ -97,7 +97,7 @@ function JobDetails() {
 
     try {
       const response = await fetch(
-        "http://localhost/HireHub/backend/api/applications.php",
+        "${import.meta.env.VITE_API_URL}/api/applications.php",
         {
           method: "POST",
           headers: {
